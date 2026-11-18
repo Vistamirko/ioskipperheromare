@@ -1,6 +1,6 @@
-# IoSkippheroMare (`ioskippheromare.it`)
+# IoBioSkipper (`iobioskipper.com`)
 
-Landing page editoriale e immersiva per **IoSkippheroMare**, l'attività personale di **Mirko Generoso Vista** (*Skipper, Guida Subacquea & Autore del libro "Io Respiro Mare"*).
+Landing page editoriale e immersiva per **IoBioSkipper**, l'attività personale di **Mirko Generoso Vista** (*Skipper, Guida Subacquea & Autore del libro "Io Respiro Mare"*).
 
 ## Concept & Direzione Creativa
 - **Posizionamento:** Non un charter standard, ma un viaggio raccontato tra il vento e i fondali (sopra la superficie con lo Skipper, sotto la superficie con la Guida Subacquea).

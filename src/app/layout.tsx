@@ -21,13 +21,14 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.brand.url),
   title: {
-    default: 'IoSkippheroMare — Skipper & Guida Subacquea | Vacanze a Vela Raccontate',
-    template: '%s | IoSkippheroMare',
+    default: 'IoBioSkipper — Skipper & Guida Subacquea | Vacanze a Vela Raccontate',
+    template: '%s | IoBioSkipper',
   },
   description:
     'Vacanze in barca a vela tra Procida, Ischia, Isole Pontine ed Eolie con Mirko Generoso Vista, Skipper, Guida Subacquea e autore di Io Respiro Mare. Snorkeling guidato, ascolto cetacei con idrofono e drone subacqueo fino a 100m.',
   keywords: [
-    'IoSkippheroMare',
+    'IoBioSkipper',
+    'iobioskipper',
     'Io Respiro Mare',
     'Skipper e Guida Subacquea',
     'Mirko Generoso Vista',
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Mirko Generoso Vista', url: 'https://iorespiromare.com' }],
   creator: 'Mirko Generoso Vista',
-  publisher: 'IoSkippheroMare',
+  publisher: 'IoBioSkipper',
   alternates: {
     canonical: '/',
   },
@@ -56,8 +57,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'it_IT',
     url: siteConfig.brand.url,
-    siteName: 'IoSkippheroMare',
-    title: 'IoSkippheroMare — La tua vacanza a vela come non l’hai mai vissuta',
+    siteName: 'IoBioSkipper',
+    title: 'IoBioSkipper — La tua vacanza a vela come non l’hai mai vissuta',
     description:
       'Naviga a vela con uno skipper che è anche guida subacquea e autore del libro "Io Respiro Mare". Ascolto cetacei con idrofono, snorkeling guidato e drone subacqueo.',
     images: [
@@ -65,13 +66,13 @@ export const metadata: Metadata = {
         url: '/images/archivio/barca-drone-fondale.webp',
         width: 1440,
         height: 900,
-        alt: 'IoSkippheroMare — Vacanze a vela, snorkeling e ascolto cetacei',
+        alt: 'IoBioSkipper — Vacanze a vela, snorkeling e ascolto cetacei',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IoSkippheroMare — Skipper & Guida Subacquea',
+    title: 'IoBioSkipper — Skipper & Guida Subacquea',
     description:
       'Vacanze a vela tra Flegree, Pontine ed Eolie con snorkeling guidato, idrofono cetacei e drone subacqueo.',
     images: ['/images/archivio/barca-drone-fondale.webp'],
@@ -84,9 +85,9 @@ const structuredData = {
     {
       '@type': 'TravelAgency',
       '@id': `${siteConfig.brand.url}/#organization`,
-      name: 'IoSkippheroMare',
+      name: 'IoBioSkipper',
       url: siteConfig.brand.url,
-      logo: `${siteConfig.brand.url}/images/logo-io-skipphero-mare.svg`,
+      logo: `${siteConfig.brand.url}/images/logo-iobioskipper.svg`,
       image: `${siteConfig.brand.url}/images/archivio/barca-drone-fondale.webp`,
       description:
         'Vacanze in barca a vela raccontate, snorkeling guidato, ascolto cetacei con idrofono e drone subacqueo fino a 100 metri con Mirko Generoso Vista.',

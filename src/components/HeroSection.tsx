@@ -6,7 +6,7 @@ export function HeroSection() {
   return (
     <section
       className="relative min-h-[92svh] sm:min-h-screen w-full overflow-hidden bg-[#0c133a] flex flex-col justify-center pt-28 pb-24 sm:pt-36 sm:pb-32"
-      aria-label="Introduzione IoSkippheroMare"
+      aria-label="Introduzione IoBioSkipper"
     >
       {/* Immagine LCP nativa con art-direction Mobile (9.5KB) / Desktop (38KB) precaricata in <head> */}
       <div className="absolute inset-0 z-0">

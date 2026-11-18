@@ -1,5 +1,5 @@
 /**
- * Configurazione centrale di IoSkippheroMare (iobioskipper.com)
+ * Configurazione centrale di IoBioSkipper (iobioskipper.com)
  * Posizionamento: Biglietto da visita digitale di Mirko Generoso Vista (Skipper, Guida Sub & Autore di "Io Respiro Mare")
  * pensato sia per essere inviato direttamente dai Charter ai propri clienti/equipaggi, sia per presentarsi a Società di Charter e Armatori.
  */
@@ -74,7 +74,7 @@ export interface FaqItem {
 
 export const siteConfig = {
   brand: {
-    name: 'IoSkippheroMare',
+    name: 'IoBioSkipper',
     domain: 'iobioskipper.com',
     url: 'https://www.iobioskipper.com',
     wordplayOrigin: 'Io Respiro Mare',

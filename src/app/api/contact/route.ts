@@ -14,7 +14,7 @@ export async function POST(request: Request) {
 
     const resendApiKey = process.env.RESEND_API_KEY
     const fromEmail =
-      process.env.RESEND_FROM_EMAIL || 'IoSkippheroMare <noreply@iobioskipper.com>'
+      process.env.RESEND_FROM_EMAIL || 'IoBioSkipper <noreply@iobioskipper.com>'
     const toEmails = (
       process.env.CONTACT_TO_EMAIL || 'vistamirko@me.com,prenotazioni@iorespiromare.com'
     )
@@ -72,14 +72,14 @@ export async function POST(request: Request) {
           from: fromEmail,
           to: toEmails,
           ...(isEmailContact ? { reply_to: String(contactInfo).trim() } : {}),
-          subject: `[IoSkippheroMare] Nuova richiesta da ${name} — ${experience || 'Info'}`,
+          subject: `[IoBioSkipper] Nuova richiesta da ${name} — ${experience || 'Info'}`,
           html: htmlContent,
         }),
       })
 
       if (!resendRes.ok) {
         const errText = await resendRes.text()
-        console.error('[IoSkippheroMare] Resend API error:', errText)
+        console.error('[IoBioSkipper] Resend API error:', errText)
         return NextResponse.json(
           { status: 'error', message: 'Errore invio email tramite Resend.' },
           { status: 502 }
@@ -92,7 +92,7 @@ export async function POST(request: Request) {
       message: 'Richiesta inviata correttamente.',
     })
   } catch (error) {
-    console.error('[IoSkippheroMare] Errore API contact:', error)
+    console.error('[IoBioSkipper] Errore API contact:', error)
     return NextResponse.json(
       { status: 'error', message: 'Errore nella gestione della richiesta.' },
       { status: 500 }

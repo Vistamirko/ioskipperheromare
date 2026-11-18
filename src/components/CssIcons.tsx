@@ -1,7 +1,7 @@
 import React from 'react'
 
 /**
- * Collezione di icone e micro-indicatori CSS/SVG su misura per IoSkippheroMare
+ * Collezione di icone e micro-indicatori CSS/SVG su misura per IoBioSkipper
  * Stile editoriale nautico, linee sottili bicolori e micro-animazioni CSS (zero emoji di sistema).
  */
 

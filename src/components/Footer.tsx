@@ -131,7 +131,7 @@ export function Footer() {
 
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-blue-100/80">
           <p>
-            © {new Date().getFullYear()} <strong className="text-white">IoSkippheroMare</strong>{' '}
+            © {new Date().getFullYear()} <strong className="text-white">IoBioSkipper</strong>{' '}
             ({siteConfig.brand.domain}) · {siteConfig.brand.skipperName}.
           </p>
           <a

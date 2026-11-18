@@ -16,8 +16,8 @@ export function BrandLogo({
   return (
     <div className={`inline-flex items-center gap-3 select-none ${className}`}>
       <img
-        src="/images/logo-io-skipphero-mare.svg"
-        alt=""
+        src="/images/logo-iobioskipper.svg"
+        alt="IoBioSkipper"
         aria-hidden="true"
         width={44}
         height={42}
@@ -31,8 +31,10 @@ export function BrandLogo({
           }`}
         >
           <span>IO</span>
-          <span className="text-[#62b4e4]">SKIPPHERO</span>
-          <span>MARE</span>
+          <span>
+            <span className="text-[#62b4e4]">BIO</span>
+            <span>SKIPPER</span>
+          </span>
         </div>
 
         {showSubtitle && (
