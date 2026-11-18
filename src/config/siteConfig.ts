@@ -91,8 +91,8 @@ export const siteConfig = {
     secondaryEmail: 'prenotazioni@iorespiromare.com',
     whatsappDefaultMessage:
       'Ciao Mirko! Ho visto ioskippheromare.it e vorrei info per una vacanza o uscita in barca a vela.',
-    instagramHandle: '@ioskippheromare',
-    instagramUrl: 'https://www.instagram.com/ioskippheromare/',
+    instagramHandle: '@iorespiromare',
+    instagramUrl: 'https://www.instagram.com/iorespiromare/',
     authorInstagramHandle: '@_mirkovista',
     authorInstagramUrl: 'https://www.instagram.com/_mirkovista/',
     bookWebsiteUrl: 'https://iorespiromare.com',
