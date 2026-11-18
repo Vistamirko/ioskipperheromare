@@ -85,11 +85,11 @@ export function SkipperBookSection() {
             <div className="flex flex-wrap gap-2 pt-1">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-[#62b4e4]/30 px-3.5 py-1.5 text-xs font-semibold">
                 <CssPulseDot color="blue" />
-                Skipper per Charter &amp; Armatori
+                Ufficiale del Diporto 2ª Classe · STCW
               </span>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-[#62b4e4]/30 px-3.5 py-1.5 text-xs font-semibold">
                 <CssPulseDot color="teal" />
-                Guida Subacquea (Snorkeling)
+                Guida Subacquea PSS · BLSD &amp; First Aid
               </span>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-[#62b4e4]/30 px-3.5 py-1.5 text-xs font-semibold">
                 <CssPulseDot color="blue" />
