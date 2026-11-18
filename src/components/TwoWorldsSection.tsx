@@ -40,7 +40,7 @@ export function TwoWorldsSection() {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <div className="text-center max-w-2xl mx-auto">
-          <span className="font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#62b4e4]">
+          <span className="font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#0369A1]">
             La Vita a Bordo
           </span>
           <h2
@@ -48,13 +48,11 @@ export function TwoWorldsSection() {
             className="mt-2 font-cordial text-3xl sm:text-5xl font-bold uppercase tracking-[0.03em] text-[#0c133a] leading-[1.08]"
           >
             Due modi di vivere{' '}
-            <span className="font-cordial-inline font-normal text-[#62b4e4]">
-              la stessa baia
-            </span>
+            <span className="text-[#0369A1]">la stessa baia</span>
           </h2>
         </div>
 
-        {/* Switcher perfettamente coordinato (#0c133a & #62b4e4) */}
+        {/* Switcher con contrasto WCAG AAA */}
         <div className="mt-7 flex justify-center">
           <div className="grid grid-cols-2 gap-1.5 rounded-full bg-white p-1.5 border border-[#0c133a]/10 shadow-md w-full max-w-sm sm:max-w-md">
             <button
@@ -63,7 +61,7 @@ export function TwoWorldsSection() {
               className={`flex items-center justify-center gap-2 rounded-full py-3 px-4 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.12em] whitespace-nowrap transition-all cursor-pointer ${
                 activeTab === 'sopra'
                   ? 'bg-[#0c133a] text-white shadow-sm'
-                  : 'text-[#0c133a]/65 hover:text-[#0c133a]'
+                  : 'text-[#0c133a]/75 hover:text-[#0c133a]'
               }`}
             >
               <CssSailSunIcon active={activeTab === 'sopra'} />
@@ -76,7 +74,7 @@ export function TwoWorldsSection() {
               className={`flex items-center justify-center gap-2 rounded-full py-3 px-4 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.12em] whitespace-nowrap transition-all cursor-pointer ${
                 activeTab === 'sotto'
                   ? 'bg-[#0c133a] text-white shadow-sm'
-                  : 'text-[#0c133a]/65 hover:text-[#0c133a]'
+                  : 'text-[#0c133a]/75 hover:text-[#0c133a]'
               }`}
             >
               <CssDiveWaveIcon active={activeTab === 'sotto'} />
@@ -85,7 +83,6 @@ export function TwoWorldsSection() {
           </div>
         </div>
 
-        {/* Card */}
         <div className="mt-7 sm:mt-9">
           <AnimatePresence mode="wait">
             <motion.div
@@ -101,7 +98,7 @@ export function TwoWorldsSection() {
                   src={current.image}
                   alt={current.title}
                   fill
-                  sizes="(min-width: 1024px) 50vw, 95vw"
+                  sizes="(min-width: 1024px) 540px, 92vw"
                   className="object-cover"
                 />
               </div>
@@ -111,13 +108,13 @@ export function TwoWorldsSection() {
                   {current.title}
                 </h3>
 
-                <p className="text-xs sm:text-base text-[#0c133a]/70">{current.subtitle}</p>
+                <p className="text-xs sm:text-base text-[#0c133a]/75">{current.subtitle}</p>
 
                 <ul className="space-y-2.5 pt-1">
                   {current.points.map((pt, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2.5 text-xs sm:text-base font-medium leading-snug text-[#0c133a]/90"
+                      className="flex items-start gap-2.5 text-xs sm:text-base font-medium leading-snug text-[#0c133a]"
                     >
                       <CssCheckPoint variant="blue" />
                       <span>{pt}</span>
@@ -128,7 +125,7 @@ export function TwoWorldsSection() {
                 <div className="pt-2">
                   <a
                     href="#itinerari"
-                    className="group inline-flex items-center gap-2 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[#1a265d] hover:text-[#62b4e4] transition-colors"
+                    className="group inline-flex items-center gap-2 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[#0369A1] hover:text-[#0c133a] transition-colors"
                   >
                     <span>Scegli la tua formula</span>
                     <span className="inline-block h-[1.5px] w-4 bg-current transition-all group-hover:w-7" />

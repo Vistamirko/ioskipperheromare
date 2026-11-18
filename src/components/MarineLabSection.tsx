@@ -1,8 +1,7 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import {
   CssWaveBadge,
   CssSonarBadge,
@@ -47,8 +46,29 @@ const items = [
 ]
 
 export function MarineLabSection() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const [showVideo, setShowVideo] = useState(false)
+
+  // Carica il video MP4 del drone sub solo quando l'utente scorre vicino alla sezione (risparmia 5MB al caricamento iniziale)
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setShowVideo(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '200px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section
+      ref={sectionRef}
       id="strumenti"
       className="py-14 sm:py-22 bg-[#0c133a] text-white"
       aria-labelledby="marine-lab-heading"
@@ -63,36 +83,32 @@ export function MarineLabSection() {
             className="mt-2 font-cordial text-3xl sm:text-5xl font-bold uppercase tracking-[0.03em] text-white leading-[1.08]"
           >
             Quello che sulle altre barche{' '}
-            <span className="font-cordial-inline font-normal text-[#62b4e4]">
-              non trovi
-            </span>
+            <span className="text-[#62b4e4]">non trovi</span>
           </h2>
-          <p className="mt-2 text-xs sm:text-base text-blue-100/75">
+          <p className="mt-2 text-xs sm:text-base text-blue-100/80">
             Veleggiare a motore spento e ascoltare in cuffia i delfini che comunicano sotto lo scafo.
           </p>
         </div>
 
         {/* Griglia 2x2 su Mobile e 4 colonne su Desktop */}
         <div className="mt-8 sm:mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
-          {items.map((item, index) => {
+          {items.map((item) => {
             const BadgeIcon = item.badge
             return (
-              <motion.div
+              <div
                 key={item.id}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.35, delay: index * 0.05 }}
                 className="group rounded-2xl sm:rounded-3xl bg-[#1a265d]/60 border border-[#62b4e4]/25 overflow-hidden shadow-lg hover:border-[#62b4e4]/60 transition-all flex flex-col"
               >
                 <div className="relative h-36 sm:h-52 w-full overflow-hidden bg-[#0c133a]">
-                  {item.video ? (
+                  {item.video && showVideo ? (
                     <video
                       autoPlay
                       muted
                       loop
                       playsInline
+                      preload="metadata"
                       poster={item.image}
+                      aria-label={item.title}
                       className="h-full w-full object-cover"
                     >
                       <source src={item.video} type="video/mp4" />
@@ -102,7 +118,7 @@ export function MarineLabSection() {
                       src={item.image}
                       alt={item.title}
                       fill
-                      sizes="(min-width: 1024px) 25vw, 50vw"
+                      sizes="(min-width: 1024px) 280px, 48vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   )}
@@ -118,11 +134,11 @@ export function MarineLabSection() {
                   <h3 className="font-cordial text-base sm:text-xl font-bold uppercase tracking-[0.03em] text-white leading-tight">
                     {item.title}
                   </h3>
-                  <p className="mt-1.5 text-[11px] sm:text-sm text-blue-100/80 leading-snug">
+                  <p className="mt-1.5 text-[11px] sm:text-sm text-blue-100/85 leading-snug">
                     {item.short}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             )
           })}
         </div>

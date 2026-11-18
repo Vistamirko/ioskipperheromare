@@ -21,11 +21,11 @@
   }
 }
 
-/* Font principale Display coordinato con il Logo (Adobe Typekit New Cordial pieno, senza variante rigata) */
+/* Font principale Display self-hosted con font-display: swap (zero render-blocking) */
 .font-editorial,
 .font-cordial,
 .font-cordial-inline {
-  font-family: "new-cordial", var(--font-sans), sans-serif;
+  font-family: var(--font-cordial), var(--font-sans), sans-serif;
   font-weight: 700;
   letter-spacing: 0.03em;
 }
@@ -35,5 +35,5 @@
 }
 
 .font-mono-nautical {
-  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-family: var(--font-sans), ui-monospace, SFMono-Regular, monospace;
 }

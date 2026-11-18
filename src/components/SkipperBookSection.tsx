@@ -2,7 +2,6 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import { siteConfig } from '@/config/siteConfig'
 import { CssPulseDot } from './CssIcons'
 
@@ -18,31 +17,25 @@ export function SkipperBookSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-12 items-center">
           {/* Foto Reale al Timone + Libro in Barca (5 col) */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-5 relative"
-          >
+          <div className="lg:col-span-5 relative">
             <div className="relative aspect-[4/4.1] w-full overflow-hidden rounded-3xl border border-[#62b4e4]/30 shadow-2xl">
               <Image
                 src={skipperAndBook.portraitPrimary}
                 alt="Mirko Generoso Vista al timone"
                 fill
-                sizes="(min-width: 1024px) 40vw, 95vw"
+                sizes="(min-width: 1024px) 460px, 92vw"
                 className="object-cover"
               />
             </div>
 
-            {/* Card Libro */}
+            {/* Card Libro con sizes="180px" per evitare warning Retina su Lighthouse */}
             <div className="mt-3 sm:mt-0 sm:absolute sm:-bottom-5 sm:-right-5 flex items-center gap-3.5 rounded-2xl bg-[#1a265d] p-3.5 border border-[#62b4e4]/45 shadow-2xl w-full sm:max-w-xs">
               <div className="relative h-16 w-12 overflow-hidden rounded-lg shrink-0 border border-white/20">
                 <Image
                   src={skipperAndBook.book.coverImage}
                   alt="Libro Io Respiro Mare"
                   fill
-                  sizes="60px"
+                  sizes="180px"
                   className="object-cover"
                 />
               </div>
@@ -64,16 +57,10 @@ export function SkipperBookSection() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Bio Cortissima e Diretta (7 col) */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-7 space-y-4 sm:space-y-5 lg:pl-4"
-          >
+          <div className="lg:col-span-7 space-y-4 sm:space-y-5 lg:pl-4">
             <span className="inline-block font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#62b4e4]">
               Chi c’è al timone
             </span>
@@ -83,7 +70,7 @@ export function SkipperBookSection() {
               className="font-cordial text-3xl sm:text-5xl font-bold uppercase tracking-[0.03em] text-white leading-[1.08]"
             >
               Ciao, sono Mirko.{' '}
-              <span className="font-cordial-inline font-normal text-[#62b4e4] block mt-1">
+              <span className="text-[#62b4e4] block mt-1">
                 Skipper, Guida Sub &amp; Autore.
               </span>
             </h2>
@@ -96,7 +83,6 @@ export function SkipperBookSection() {
               bordo.
             </p>
 
-            {/* 3 Tag rapidi */}
             <div className="flex flex-wrap gap-2 pt-1">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-[#62b4e4]/30 px-3.5 py-1.5 text-xs font-semibold">
                 <CssPulseDot color="blue" />
@@ -120,7 +106,7 @@ export function SkipperBookSection() {
                 <span>Organizziamo la tua uscita</span>
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

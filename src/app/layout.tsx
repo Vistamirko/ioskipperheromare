@@ -1,27 +1,31 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import { siteConfig } from '@/config/siteConfig'
 
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-serif',
+const newCordial = localFont({
+  src: [
+    {
+      path: '../../public/fonts/new-cordial-400.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/new-cordial-700.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-cordial',
   display: 'swap',
+  preload: true,
 })
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
-  display: 'swap',
-})
-
-const jetbrains = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-mono',
   display: 'swap',
 })
 
@@ -40,7 +44,7 @@ export const metadata: Metadata = {
     'Mirko Generoso Vista',
     'vacanza in barca a vela biologia marina',
     'snorkeling guidato barca a vela',
-    'crociera vela Campi Flegrei Procida Ischia Pontine',
+    'crociera vela Campi Flegrei Procida Ischia Pontine Eolie',
   ],
   openGraph: {
     type: 'website',
@@ -69,12 +73,9 @@ export default function RootLayout({
   return (
     <html
       lang="it"
-      className={`${cormorant.variable} ${jakarta.variable} ${jetbrains.variable} antialiased`}
+      className={`${newCordial.variable} ${jakarta.variable} antialiased`}
     >
-      <head>
-        <link rel="stylesheet" href="https://use.typekit.net/xys3qnn.css" />
-      </head>
-      <body className="min-h-screen flex flex-col bg-[#F8F9FA] text-[#061423] selection:bg-[#2DD4BF]/30 selection:text-[#2DD4BF]">
+      <body className="min-h-screen flex flex-col bg-[#0c133a] text-[#0c133a] selection:bg-[#62b4e4]/30 selection:text-[#0c133a]">
         {children}
       </body>
     </html>

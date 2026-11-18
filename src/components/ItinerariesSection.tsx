@@ -2,7 +2,6 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import { siteConfig, VoyageFormat } from '@/config/siteConfig'
 import { CssCheckPoint, CssPulseDot } from './CssIcons'
 
@@ -19,7 +18,7 @@ export function ItinerariesSection({ onSelectFormat }: ItinerariesSectionProps) 
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <div className="text-center max-w-xl mx-auto">
-          <span className="font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#62b4e4]">
+          <span className="font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#0369A1]">
             Saliamo a Bordo
           </span>
           <h2
@@ -27,24 +26,17 @@ export function ItinerariesSection({ onSelectFormat }: ItinerariesSectionProps) 
             className="mt-2 font-cordial text-3xl sm:text-5xl font-bold uppercase tracking-[0.03em] text-[#0c133a]"
           >
             Scegli la tua{' '}
-            <span className="font-cordial-inline font-normal text-[#62b4e4]">
-              formula
-            </span>
+            <span className="text-[#0369A1]">formula</span>
           </h2>
         </div>
 
-        {/* 3 Card Coordinate */}
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-          {siteConfig.itineraries.formats.map((format: VoyageFormat, index: number) => {
+          {siteConfig.itineraries.formats.map((format: VoyageFormat) => {
             const isFeatured = Boolean(format.featured)
 
             return (
-              <motion.article
+              <article
                 key={format.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: index * 0.08 }}
                 className={`group flex flex-col justify-between rounded-3xl overflow-hidden border transition-all duration-300 ${
                   isFeatured
                     ? 'bg-[#0c133a] text-white border-[#62b4e4]/50 shadow-2xl lg:-translate-y-2'
@@ -57,7 +49,7 @@ export function ItinerariesSection({ onSelectFormat }: ItinerariesSectionProps) 
                       src={format.image}
                       alt={format.title}
                       fill
-                      sizes="(min-width: 1024px) 33vw, 95vw"
+                      sizes="(min-width: 1024px) 380px, 92vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0c133a]/85 via-transparent to-transparent" />
@@ -89,7 +81,7 @@ export function ItinerariesSection({ onSelectFormat }: ItinerariesSectionProps) 
                         <li
                           key={idx}
                           className={`flex items-start gap-2.5 text-xs sm:text-sm leading-snug ${
-                            isFeatured ? 'text-blue-50/90' : 'text-[#0c133a]/80'
+                            isFeatured ? 'text-blue-50/90' : 'text-[#0c133a]/85'
                           }`}
                         >
                           <CssCheckPoint variant="blue" />
@@ -114,7 +106,7 @@ export function ItinerariesSection({ onSelectFormat }: ItinerariesSectionProps) 
                     <span aria-hidden="true">→</span>
                   </button>
                 </div>
-              </motion.article>
+              </article>
             )
           })}
         </div>
