@@ -6,23 +6,23 @@ import { CssSailSunIcon, CssDiveWaveIcon, CssCheckPoint } from './CssIcons'
 
 const tabsData = {
   sopra: {
-    title: 'Sole a prua, calette limpide e aperitivi al tramonto.',
-    subtitle: 'Stacca la spina: navighiamo a vela verso baie raggiungibili solo dal mare.',
+    title: 'Conduzione sicura, baie ridossate e vero spirito di vacanza.',
+    subtitle: 'Cura dell’imbarcazione, ancoraggi consapevoli e ritmo rilassato per gli ospiti.',
     image: '/images/archivio/navigazione-prua-golfo.webp',
     points: [
-      'Bagni in acque turchesi lontano dalla folla (ancorando sempre sulla sabbia)',
-      'In navigazione a vela spegniamo il motore e ascoltiamo i cetacei con l’idrofono',
-      'Pranzi in pozzetto, relax al sole e calice di vino al tramonto',
+      'Massima attenzione alla sicurezza, alla barca e agli ancoraggi sempre su sabbia',
+      'Scelta delle calette più limpide e dei migliori ridossi tra Flegree, Pontine ed Eolie',
+      'Clima sereno e conviviale in pozzetto, con ascolto dei cetacei durante le veleggiate',
     ],
   },
   sotto: {
-    title: 'Il canto dei delfini in cuffia e il blu fino a 100 metri.',
-    subtitle: 'Senza bombole e senza impegno: vivi il mare come non lo hai mai visto né sentito.',
+    title: 'Il kit che porto nella mia sacca per stupire l’equipaggio.',
+    subtitle: 'Senza bombole e senza impegno: un valore aggiunto gratuito per chi naviga con me.',
     image: '/images/archivio/mirko-idrofono-cavo.webp',
     points: [
-      'Idrofono a bordo per sentire dal vivo i fischi e i click di delfini e cetacei',
-      'Drone subacqueo per esplorare il fondale fino a -100m restando in pozzetto',
-      'Snorkeling insieme con la Guida Sub e microscopio da campo sullo smartphone',
+      'Idrofono professionale per ascoltare dal vivo in cuffia delfini e cetacei',
+      'Drone subacqueo fino a -100m per esplorare i fondali insieme dal pozzetto',
+      'Snorkeling guidato in superficie e microscopio da campo per grandi e ragazzi',
     ],
   },
 }
@@ -40,14 +40,14 @@ export function TwoWorldsSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <span className="font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#075985]">
-            La Vita a Bordo
+            A Bordo con Me
           </span>
           <h2
             id="two-worlds-heading"
             className="mt-2 font-cordial text-3xl sm:text-5xl font-bold uppercase tracking-[0.03em] text-[#0c133a] leading-[1.08]"
           >
-            Due modi di vivere{' '}
-            <span className="text-[#075985]">la stessa baia</span>
+            Sicurezza al timone.{' '}
+            <span className="text-[#075985]">Meraviglia in rada.</span>
           </h2>
         </div>
 
@@ -63,7 +63,7 @@ export function TwoWorldsSection() {
               }`}
             >
               <CssSailSunIcon active={activeTab === 'sopra'} />
-              <span>Vela &amp; Relax</span>
+              <span>Lo Skipper</span>
             </button>
 
             <button
@@ -76,7 +76,7 @@ export function TwoWorldsSection() {
               }`}
             >
               <CssDiveWaveIcon active={activeTab === 'sotto'} />
-              <span>Snorkel &amp; Mare</span>
+              <span>La Guida Sub</span>
             </button>
           </div>
         </div>
@@ -118,7 +118,7 @@ export function TwoWorldsSection() {
                   href="#itinerari"
                   className="group inline-flex items-center gap-2 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[#075985] hover:text-[#0c133a] transition-colors"
                 >
-                  <span>Scegli la tua formula</span>
+                  <span>Per Ospiti &amp; Società di Charter</span>
                   <span className="inline-block h-[1.5px] w-4 bg-current transition-all group-hover:w-7" />
                 </a>
               </div>

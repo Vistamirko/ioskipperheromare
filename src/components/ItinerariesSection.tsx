@@ -13,6 +13,7 @@ export function ItinerariesSection() {
       contactEl.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }
+
   return (
     <section
       id="itinerari"
@@ -20,16 +21,16 @@ export function ItinerariesSection() {
       aria-labelledby="itineraries-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-8">
-        <div className="text-center max-w-xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto">
           <span className="font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#075985]">
-            Saliamo a Bordo
+            Ospiti, Famiglie &amp; Partner Charter
           </span>
           <h2
             id="itineraries-heading"
             className="mt-2 font-cordial text-3xl sm:text-5xl font-bold uppercase tracking-[0.03em] text-[#0c133a]"
           >
-            Scegli la tua{' '}
-            <span className="text-[#075985]">formula</span>
+            Con chi navigo e{' '}
+            <span className="text-[#075985]">collaboro</span>
           </h2>
         </div>
 
@@ -80,6 +81,14 @@ export function ItinerariesSection() {
                       {format.title}
                     </h3>
 
+                    <p
+                      className={`text-xs sm:text-sm leading-relaxed ${
+                        isFeatured ? 'text-blue-100/80' : 'text-[#0c133a]/75'
+                      }`}
+                    >
+                      {format.description}
+                    </p>
+
                     <ul className="space-y-2.5 pt-1">
                       {format.highlights.map((item, idx) => (
                         <li
@@ -106,7 +115,7 @@ export function ItinerariesSection() {
                         : 'bg-[#0c133a] hover:bg-[#1a265d] text-white'
                     }`}
                   >
-                    <span>Chiedi disponibilità</span>
+                    <span>{format.ctaLabel}</span>
                     <span aria-hidden="true">→</span>
                   </button>
                 </div>

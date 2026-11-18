@@ -29,7 +29,7 @@ const items = [
   },
   {
     id: 'snorkel',
-    tag: 'IN ACQUA',
+    tag: 'CON LA GUIDA SUB',
     title: 'Snorkeling Guidato',
     short: 'Nuotiamo insieme con maschera e pinne tra stelle marine, polpi e Posidonia.',
     image: '/images/snorkel.webp',
@@ -49,7 +49,6 @@ export function MarineLabSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const [showVideo, setShowVideo] = useState(false)
 
-  // Carica il video MP4 del drone sub solo quando l'utente scorre vicino alla sezione (risparmia 5MB al caricamento iniziale)
   useEffect(() => {
     const el = sectionRef.current
     if (!el) return
@@ -76,17 +75,18 @@ export function MarineLabSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <span className="font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#62b4e4]">
-            L’Emozione che non ti aspetti
+            Nella Mia Sacca da Skipper
           </span>
           <h2
             id="marine-lab-heading"
             className="mt-2 font-cordial text-3xl sm:text-5xl font-bold uppercase tracking-[0.03em] text-white leading-[1.08]"
           >
-            Quello che sulle altre barche{' '}
-            <span className="text-[#62b4e4]">non trovi</span>
+            Il kit che porto con me{' '}
+            <span className="text-[#62b4e4]">su ogni barca</span>
           </h2>
           <p className="mt-2 text-xs sm:text-base text-blue-100/80">
-            Veleggiare a motore spento e ascoltare in cuffia i delfini che comunicano sotto lo scafo.
+            Su qualsiasi imbarcazione charter io salga al comando, metto a disposizione degli ospiti
+            la mia attrezzatura esplorativa.
           </p>
         </div>
 
@@ -163,7 +163,7 @@ export function MarineLabSection() {
             href="#contatti"
             className="shrink-0 rounded-full bg-[#62b4e4] hover:bg-white px-6 py-3 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-[#0c133a] transition-colors"
           >
-            Vivilo a bordo →
+            Contattami →
           </a>
         </div>
       </div>

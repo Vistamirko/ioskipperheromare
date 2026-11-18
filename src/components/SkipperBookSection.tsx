@@ -40,7 +40,7 @@ export function SkipperBookSection() {
               </div>
               <div className="min-w-0">
                 <span className="font-cordial text-[10px] font-bold uppercase tracking-wider text-[#62b4e4] block">
-                  Il Libro a Bordo
+                  Il Mio Libro a Bordo
                 </span>
                 <p className="font-cordial text-base font-bold uppercase tracking-[0.04em] text-white leading-tight truncate mt-0.5">
                   «Io Respiro Mare»
@@ -58,10 +58,10 @@ export function SkipperBookSection() {
             </div>
           </div>
 
-          {/* Bio Cortissima e Diretta (7 col) */}
+          {/* Presentazione Personale per Ospiti e Charter (7 col) */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-5 lg:pl-4">
             <span className="inline-block font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#62b4e4]">
-              Chi c’è al timone
+              Il Biglietto da Visita dello Skipper
             </span>
 
             <h2
@@ -70,26 +70,26 @@ export function SkipperBookSection() {
             >
               Ciao, sono Mirko.{' '}
               <span className="text-[#62b4e4] block mt-1">
-                Skipper, Guida Sub &amp; Autore.
+                Il tuo Comandante &amp; Guida Sub.
               </span>
             </h2>
 
-            <p className="text-sm sm:text-lg text-blue-50/85 leading-relaxed">
-              In barca con me si viene prima di tutto per stare bene, rilassarsi al sole e fare il
-              bagno nelle baie più belle tra{' '}
-              <strong>Procida, Ischia, le Isole Pontine e le Eolie</strong>. La mia passione per i
-              fondali e per il progetto <em>Io Respiro Mare</em> è il regalo in più che trovi a
-              bordo.
+            <p className="text-sm sm:text-lg text-blue-50/90 leading-relaxed">
+              Che il tuo charter ti abbia inviato questa pagina per presentarmi prima dell’imbarco,
+              o che tu sia una società di charter alla ricerca di una figura capace di valorizzare
+              la flotta: a bordo porto <strong>conduzione sicura, empatia con l’equipaggio</strong>{' '}
+              e tutta la meraviglia del mio progetto <em>Io Respiro Mare</em> tra{' '}
+              <strong>Procida, Ischia, le Isole Pontine e le Eolie</strong>.
             </p>
 
             <div className="flex flex-wrap gap-2 pt-1">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-[#62b4e4]/30 px-3.5 py-1.5 text-xs font-semibold">
                 <CssPulseDot color="blue" />
-                Comandante &amp; Skipper
+                Skipper per Charter &amp; Armatori
               </span>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-[#62b4e4]/30 px-3.5 py-1.5 text-xs font-semibold">
                 <CssPulseDot color="teal" />
-                Guida Sub (Snorkeling)
+                Guida Subacquea (Snorkeling)
               </span>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-[#62b4e4]/30 px-3.5 py-1.5 text-xs font-semibold">
                 <CssPulseDot color="blue" />
@@ -97,12 +97,18 @@ export function SkipperBookSection() {
               </span>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-2 flex flex-wrap gap-3">
               <a
-                href="#contatti"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-[#62b4e4] hover:bg-white px-8 py-3.5 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-[#0c133a] shadow-lg transition-all"
+                href="#strumenti"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-[#62b4e4] hover:bg-white px-7 py-3.5 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-[#0c133a] shadow-lg transition-all"
               >
-                <span>Organizziamo la tua uscita</span>
+                <span>Guarda il kit che porto a bordo</span>
+              </a>
+              <a
+                href="#itinerari"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 px-6 py-3.5 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-white transition-all"
+              >
+                <span>Info per Ospiti &amp; Charter</span>
               </a>
             </div>
           </div>

@@ -191,7 +191,7 @@ export function ContactSection() {
                         htmlFor="experience"
                         className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
                       >
-                        Esperienza
+                        Chi sei / Motivo del contatto
                       </label>
                       <select
                         id="experience"
@@ -234,14 +234,14 @@ export function ContactSection() {
                       htmlFor="message"
                       className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
                     >
-                      Quanti siete o cosa vi piacerebbe fare? (opzionale)
+                      Messaggio (es. barca prenotata, società di charter o richiesta)
                     </label>
                     <textarea
                       id="message"
                       rows={2}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Es. Siamo in 2 / una famiglia con 2 ragazzi..."
+                      placeholder="Es. Il charter ci ha assegnato te per la settimana di luglio / Siamo un charter..."
                       className="w-full rounded-xl border border-[#0c133a]/25 px-3.5 py-2.5 text-sm focus:border-[#075985] focus:outline-none"
                     />
                   </div>
