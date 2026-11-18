@@ -1,5 +1,5 @@
 /**
- * Configurazione centrale di IoSkippheroMare (ioskippheromare.it)
+ * Configurazione centrale di IoSkippheroMare (iobioskipper.com)
  * Posizionamento: Biglietto da visita digitale di Mirko Generoso Vista (Skipper, Guida Sub & Autore di "Io Respiro Mare")
  * pensato sia per essere inviato direttamente dai Charter ai propri clienti/equipaggi, sia per presentarsi a Società di Charter e Armatori.
  */
@@ -75,8 +75,8 @@ export interface FaqItem {
 export const siteConfig = {
   brand: {
     name: 'IoSkippheroMare',
-    domain: 'ioskippheromare.it',
-    url: 'https://ioskippheromare.it',
+    domain: 'iobioskipper.com',
+    url: 'https://www.iobioskipper.com',
     wordplayOrigin: 'Io Respiro Mare',
     roleSubtitle: 'Skipper & Guida Sub',
     fullQualification: 'Skipper · Guida Subacquea · Autore di «Io Respiro Mare»',
@@ -88,10 +88,10 @@ export const siteConfig = {
   contact: {
     phoneDisplay: '+39 329 016 0806',
     phoneRaw: '393290160806',
-    email: 'mirko@ioskippheromare.it',
+    email: 'mirko@iobioskipper.com',
     secondaryEmail: 'prenotazioni@iorespiromare.com',
     whatsappDefaultMessage:
-      'Ciao Mirko! Ho visitato il tuo profilo su ioskippheromare.it e vorrei mettermi in contatto con te.',
+      'Ciao Mirko! Ho visitato il tuo profilo su iobioskipper.com e vorrei mettermi in contatto con te.',
     instagramHandle: '@iorespiromare',
     instagramUrl: 'https://www.instagram.com/iorespiromare/',
     authorInstagramHandle: '@_mirkovista',

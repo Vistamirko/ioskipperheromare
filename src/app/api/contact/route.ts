@@ -14,7 +14,7 @@ export async function POST(request: Request) {
 
     const resendApiKey = process.env.RESEND_API_KEY
     const fromEmail =
-      process.env.RESEND_FROM_EMAIL || 'IoSkippheroMare <noreply@advbrains.com>'
+      process.env.RESEND_FROM_EMAIL || 'IoSkippheroMare <noreply@iobioskipper.com>'
     const toEmails = (
       process.env.CONTACT_TO_EMAIL || 'vistamirko@me.com,prenotazioni@iorespiromare.com'
     )
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
         <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; background: #0c133a; color: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(98,180,228,0.3);">
           <div style="padding: 28px 32px; background: #1a265d; border-bottom: 1px solid rgba(98,180,228,0.2);">
             <p style="margin: 0; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #62b4e4; font-weight: 700;">
-              IOSKIPPHEROMARE.IT · NUOVA RICHIESTA DI BORDO
+              IOBIOSKIPPER.COM · NUOVA RICHIESTA DI BORDO
             </p>
             <h1 style="margin: 8px 0 0; font-size: 24px; color: #ffffff;">
               Richiesta da ${String(name)}
