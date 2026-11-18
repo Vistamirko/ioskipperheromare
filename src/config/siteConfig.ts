@@ -392,7 +392,7 @@ export const siteConfig = {
         subtitle: 'La barca in esclusiva cucita sui vostri ritmi',
         description:
           'Ideale per una famiglia con bambini e ragazzi o un gruppo di amici affiatati. Ritmi morbidi, soste scelte insieme e tanto divertimento in acqua per i più giovani.',
-        image: '/images/archivio/laboratorio-pozzetto.webp',
+        image: '/images/archivio/famiglia-in-barca.webp',
         idealFor: 'Famiglie con bambini/ragazzi o gruppi di amici in esclusiva',
         highlights: [
           'Rotta e orari morbidi pensati sulle vostre esigenze',
