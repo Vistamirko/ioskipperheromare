@@ -141,7 +141,7 @@ export async function POST(request: Request) {
 
             <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #f1f5f9; font-size: 13px; color: #64748b; line-height: 1.55;">
               <strong style="color: #0c133a; font-size: 14px;">Mirko Generoso Vista</strong><br/>
-              Ufficiale di Navigazione Diporto 2ª Classe · Guida Sub Certificata PSS · Autore del libro <em>«Io Respiro Mare»</em><br/>
+              Skipper · Guida Subacquea PSS · Appassionato di Biologia Marina · Autore di <em>«Io Respiro Mare»</em><br/>
               <a href="https://www.iobioskipper.com" style="color: #0284c7; text-decoration: none;">iobioskipper.com</a> · <a href="https://iorespiromare.com" style="color: #0284c7; text-decoration: none;">iorespiromare.com</a>
             </div>
           </div>

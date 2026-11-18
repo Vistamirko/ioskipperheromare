@@ -3,7 +3,7 @@ import { siteConfig } from '@/config/siteConfig'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'IoBioSkipper — Skipper & Guida Subacquea',
+    name: 'IoBioSkipper — Skipper, Guida Sub & Biologia Marina',
     short_name: 'IoBioSkipper',
     description:
       'Vacanze a vela raccontate, snorkeling guidato, ascolto dei cetacei con idrofono e drone subacqueo con Mirko Generoso Vista.',

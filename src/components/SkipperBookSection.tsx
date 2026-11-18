@@ -70,14 +70,14 @@ export function SkipperBookSection() {
             >
               Ciao, sono Mirko.{' '}
               <span className="text-[#62b4e4] block mt-1">
-                Il tuo Comandante &amp; Guida Sub.
+                Comandante, Guida Sub &amp; Appassionato di Biologia Marina.
               </span>
             </h2>
 
             <p className="text-sm sm:text-lg text-blue-50/90 leading-relaxed">
               Che il tuo charter ti abbia inviato questa pagina per presentarmi prima dell’imbarco,
               o che tu sia una società di charter alla ricerca di una figura capace di valorizzare
-              la flotta: a bordo porto <strong>conduzione sicura, empatia con l’equipaggio</strong>{' '}
+              la flotta: a bordo porto <strong>conduzione sicura, passione per la biologia marina</strong>{' '}
               e tutta la meraviglia del mio progetto <em>Io Respiro Mare</em> tra{' '}
               <strong>Procida, Ischia, le Isole Pontine e le Eolie</strong>.
             </p>
@@ -86,6 +86,10 @@ export function SkipperBookSection() {
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-[#62b4e4]/30 px-3.5 py-1.5 text-xs font-semibold">
                 <CssPulseDot color="blue" />
                 Ufficiale del Diporto 2ª Classe · STCW
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-[#62b4e4]/30 px-3.5 py-1.5 text-xs font-semibold">
+                <CssPulseDot color="teal" />
+                Appassionato di Biologia Marina
               </span>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-[#62b4e4]/30 px-3.5 py-1.5 text-xs font-semibold">
                 <CssPulseDot color="teal" />

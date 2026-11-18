@@ -39,8 +39,8 @@ export function HeroSection() {
         <div className="max-w-3xl space-y-5 sm:space-y-7 text-left">
           <div className="inline-flex items-center gap-2.5 rounded-full bg-[#0c133a]/85 ring-1 ring-[#62b4e4]/35 px-4 py-1.5 backdrop-blur-xl">
             <CssPulseDot color="blue" />
-            <span className="font-cordial text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#62b4e4] uppercase">
-              Mirko Generoso Vista · Skipper &amp; Guida Sub
+            <span className="font-cordial text-[11px] sm:text-xs font-bold tracking-[0.18em] text-[#62b4e4] uppercase">
+              Mirko Generoso Vista · Skipper, Guida Sub &amp; Appassionato di Biologia Marina
             </span>
           </div>
 
@@ -52,9 +52,9 @@ export function HeroSection() {
           </h1>
 
           <p className="text-base sm:text-xl text-white/95 font-normal leading-relaxed max-w-2xl drop-shadow">
-            Comandante, Guida Subacquea e autore del libro <em>«Io Respiro Mare»</em>. Su ogni
-            imbarcazione porto sicurezza, conoscenza delle isole e un kit esclusivo con idrofono per
-            ascoltare i cetacei, drone subacqueo fino a 100m e snorkeling guidato.
+            Comandante, Guida Subacquea, grande appassionato di biologia marina e autore del libro <em>«Io Respiro Mare»</em>.
+            Su ogni imbarcazione porto sicurezza al timone e lo stupore della scoperta: idrofono per
+            ascoltare i cetacei, drone subacqueo fino a 100m, microscopio da campo e snorkeling biologico guidato.
           </p>
 
           <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">

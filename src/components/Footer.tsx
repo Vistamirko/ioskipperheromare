@@ -67,9 +67,9 @@ export function Footer() {
           <div className="md:col-span-5 space-y-3">
             <BrandLogo variant="light" />
             <p className="text-xs sm:text-sm text-blue-100/75 max-w-sm leading-relaxed">
-              Ufficiale di Navigazione del Diporto di 2ª Classe, Guida Subacquea PSS e autore di{' '}
-              <em>«Io Respiro Mare»</em>. Conduzione per Charter, Armatori ed Equipaggi con kit di
-              ascolto cetacei e drone subacqueo a bordo.
+              Ufficiale di Navigazione del Diporto di 2ª Classe, Guida Subacquea PSS, appassionato
+              di biologia marina e autore di <em>«Io Respiro Mare»</em>. Conduzione per Charter,
+              Armatori ed Equipaggi con kit di ascolto cetacei, microscopi e drone subacqueo a bordo.
             </p>
             <div className="text-xs text-[#62b4e4]/90">{siteConfig.brand.homeArea}</div>
           </div>

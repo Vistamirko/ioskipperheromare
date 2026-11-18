@@ -78,8 +78,8 @@ export const siteConfig = {
     domain: 'iobioskipper.com',
     url: 'https://www.iobioskipper.com',
     wordplayOrigin: 'Io Respiro Mare',
-    roleSubtitle: 'Skipper & Guida Sub',
-    fullQualification: 'Skipper · Guida Subacquea · Autore di «Io Respiro Mare»',
+    roleSubtitle: 'Skipper · Biologia Marina · Guida Sub',
+    fullQualification: 'Skipper · Guida Subacquea · Appassionato di Biologia Marina · Autore di «Io Respiro Mare»',
     skipperName: 'Mirko Generoso Vista',
     homeArea: 'Golfo di Napoli · Procida & Ischia · Pontine · Isole Eolie',
     coordinates: 'Procida · Ischia · Ventotene · Ponza · Palmarola · Eolie',
@@ -107,10 +107,10 @@ export const siteConfig = {
   ],
 
   hero: {
-    eyebrow: 'MIRKO GENEROSO VISTA · SKIPPER & GUIDA SUB',
+    eyebrow: 'MIRKO GENEROSO VISTA · SKIPPER, GUIDA SUB & BIOLOGIA MARINA',
     title: 'Più di uno skipper al timone. Un valore unico a bordo.',
     subtitle:
-      "Comandante, Guida Subacquea e autore del libro «Io Respiro Mare». Su ogni imbarcazione porto sicurezza, conoscenza delle isole e un kit esclusivo con idrofono per ascoltare i cetacei, drone subacqueo fino a 100m e snorkeling guidato.",
+      "Comandante, Guida Subacquea, appassionato di biologia marina e autore del libro «Io Respiro Mare». Su ogni imbarcazione porto sicurezza, conoscenza delle isole e un kit esclusivo con idrofono per ascoltare i cetacei, drone subacqueo fino a 100m, microscopio e snorkeling guidato.",
     primaryCta: {
       label: 'Cosa porto a bordo',
       href: '#strumenti',
@@ -267,17 +267,18 @@ export const siteConfig = {
   skipperAndBook: {
     eyebrow: 'IL PROFILO DELLO SKIPPER',
     title: 'Mirko Generoso Vista',
-    roleLine: 'Skipper · Guida Subacquea · Autore di “Io Respiro Mare”',
+    roleLine: 'Skipper · Guida Subacquea · Appassionato di Biologia Marina · Autore di “Io Respiro Mare”',
     introQuote:
       '«In barca porto la sicurezza di un Comandante e lo stupore di chi ama far scoprire il mare ai propri ospiti.»',
     bioParagraphs: [
-      'Skipper, Guida Subacquea certificata e Digital Art Director. Collaboro con società di charter, armatori ed equipaggi per trasformare ogni crociera a vela tra Procida, Ischia, le Isole Pontine e le Eolie in un’esperienza curata, sicura e ricca di fascino.',
-      'Autore del libro "Io Respiro Mare", porto a bordo con me non solo la conduzione tecnica dell’imbarcazione, ma anche racconti, snorkeling guidato e strumenti come idrofono, drone subacqueo e microscopi che lasciano negli ospiti un ricordo indimenticabile della vacanza.',
+      'Skipper, Guida Subacquea certificata e grande appassionato divulgatore di biologia marina. Collaboro con società di charter, armatori ed equipaggi per trasformare ogni crociera a vela tra Procida, Ischia, le Isole Pontine e le Eolie in un’esperienza curata, sicura e ricca di fascino.',
+      'Autore del libro "Io Respiro Mare", unisco la conduzione tecnica dell’imbarcazione alla mia passione per la vita marina: porto a bordo racconti, snorkeling guidato tra le praterie di Posidonia e strumenti come idrofono cetacei, drone subacqueo fino a 100m e microscopio da campo che regalano agli ospiti una prospettiva unica sul mare.',
     ],
     credentials: [
       { label: 'Al Timone', value: 'Skipper & Comandante' },
+      { label: 'Passione', value: 'Biologia Marina & Tutela' },
       { label: 'In Acqua', value: 'Guida Sub (Snorkeling)' },
-      { label: 'Kit Personale', value: 'Idrofono, Drone -100m & Microscopi' },
+      { label: 'Kit a Bordo', value: 'Idrofono, Drone -100m & Microscopi' },
       { label: 'Autore', value: 'Libro «Io Respiro Mare»' },
     ],
     portraitPrimary: '/images/archivio/mirko-al-timone.webp',

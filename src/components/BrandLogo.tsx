@@ -39,11 +39,11 @@ export function BrandLogo({
 
         {showSubtitle && (
           <span
-            className={`mt-1 text-[9px] sm:text-[10px] font-medium uppercase tracking-[0.22em] whitespace-nowrap ${
+            className={`mt-1 text-[8.5px] sm:text-[9.5px] font-medium uppercase tracking-[0.16em] whitespace-nowrap ${
               isLight ? 'text-[#62b4e4]' : 'text-[#1a265d]'
             }`}
           >
-            Skipper &amp; Guida Sub
+            Skipper · Biologia Marina · Guida Sub
           </span>
         )}
       </div>
