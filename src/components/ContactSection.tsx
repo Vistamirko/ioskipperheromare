@@ -6,7 +6,8 @@ import { CssPulseDot } from './CssIcons'
 
 export function ContactSection() {
   const [name, setName] = useState('')
-  const [contactInfo, setContactInfo] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
   const [period, setPeriod] = useState(siteConfig.contactSection.periods[1])
   const [experience, setExperience] = useState(
     siteConfig.contactSection.experienceOptions[1]
@@ -32,8 +33,8 @@ export function ContactSection() {
   const buildWhatsappUrl = () => {
     const text = name
       ? `Ciao Mirko! Sono ${name}.\nVorrei info per: ${experience} (${period}).\n${
-          message ? `Note: ${message}` : ''
-        }`
+          email ? `Email: ${email}\n` : ''
+        }${phone ? `Tel: ${phone}\n` : ''}${message ? `Note: ${message}` : ''}`
       : siteConfig.contact.whatsappDefaultMessage
 
     return `https://wa.me/${siteConfig.contact.phoneRaw}?text=${encodeURIComponent(text)}`
@@ -46,7 +47,15 @@ export function ContactSection() {
       await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, contactInfo, period, experience, message }),
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          contactInfo: email || phone,
+          period,
+          experience,
+          message,
+        }),
       })
     } catch {
       // Fallback silenzioso
@@ -123,20 +132,35 @@ export function ContactSection() {
             >
               {submitted ? (
                 <div className="py-6 text-center space-y-4">
-                  <h3 className="font-cordial text-2xl sm:text-3xl font-bold uppercase">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 mb-1">
+                    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="font-cordial text-2xl sm:text-3xl font-bold uppercase text-[#0c133a]">
                     Richiesta inviata!
                   </h3>
-                  <p className="text-sm text-[#0c133a]/80">
-                    Ti rispondo prestissimo. Vuoi anticiparmi il messaggio su WhatsApp?
+                  <p className="text-sm text-[#0c133a]/80 max-w-sm mx-auto leading-relaxed">
+                    {email ? (
+                      <>
+                        Ti abbiamo inviato una ricevuta di conferma all&apos;indirizzo{' '}
+                        <strong className="text-[#0c133a] font-semibold">{email}</strong>.
+                      </>
+                    ) : (
+                      'Abbiamo ricevuto la tua richiesta.'
+                    )}{' '}
+                    Ti ricontatteremo prestissimo!
                   </p>
-                  <a
-                    href={buildWhatsappUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#62b4e4] px-6 py-3 font-cordial text-xs font-bold uppercase tracking-[0.16em] text-[#0c133a]"
-                  >
-                    <span>Apri WhatsApp</span>
-                  </a>
+                  <div className="pt-2">
+                    <a
+                      href={buildWhatsappUrl()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full bg-[#62b4e4] px-6 py-3 font-cordial text-xs font-bold uppercase tracking-[0.16em] text-[#0c133a] hover:bg-[#0c133a] hover:text-white transition-all shadow-md"
+                    >
+                      <span>Vuoi scrivermi su WhatsApp?</span>
+                    </a>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -153,7 +177,7 @@ export function ContactSection() {
                         htmlFor="name"
                         className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
                       >
-                        Nome *
+                        Nome e Cognome *
                       </label>
                       <input
                         id="name"
@@ -168,18 +192,18 @@ export function ContactSection() {
 
                     <div>
                       <label
-                        htmlFor="contactInfo"
+                        htmlFor="email"
                         className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
                       >
-                        WhatsApp o Email *
+                        Email * <span className="text-gray-400 font-normal lowercase">(ricevi qui la ricevuta)</span>
                       </label>
                       <input
-                        id="contactInfo"
-                        type="text"
+                        id="email"
+                        type="email"
                         required
-                        value={contactInfo}
-                        onChange={(e) => setContactInfo(e.target.value)}
-                        placeholder="+39 333... o email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="nome@email.com"
                         className="w-full rounded-xl border border-[#0c133a]/25 px-3.5 py-3 text-sm focus:border-[#075985] focus:outline-none"
                       />
                     </div>
@@ -188,23 +212,19 @@ export function ContactSection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label
-                        htmlFor="experience"
+                        htmlFor="phone"
                         className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
                       >
-                        Chi sei / Motivo del contatto
+                        WhatsApp / Telefono <span className="text-gray-400 font-normal lowercase">(facoltativo)</span>
                       </label>
-                      <select
-                        id="experience"
-                        value={experience}
-                        onChange={(e) => setExperience(e.target.value)}
-                        className="w-full rounded-xl border border-[#0c133a]/25 bg-white px-3.5 py-3 text-sm font-medium focus:outline-none"
-                      >
-                        {siteConfig.contactSection.experienceOptions.map((opt) => (
-                          <option key={opt} value={opt}>
-                            {opt}
-                          </option>
-                        ))}
-                      </select>
+                      <input
+                        id="phone"
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder="+39 333 1234567"
+                        className="w-full rounded-xl border border-[#0c133a]/25 px-3.5 py-3 text-sm focus:border-[#075985] focus:outline-none"
+                      />
                     </div>
 
                     <div>
@@ -212,7 +232,7 @@ export function ContactSection() {
                         htmlFor="period"
                         className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
                       >
-                        Periodo
+                        Periodo indicativo
                       </label>
                       <select
                         id="period"
@@ -227,6 +247,27 @@ export function ContactSection() {
                         ))}
                       </select>
                     </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="experience"
+                      className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
+                    >
+                      Chi sei / Motivo del contatto
+                    </label>
+                    <select
+                      id="experience"
+                      value={experience}
+                      onChange={(e) => setExperience(e.target.value)}
+                      className="w-full rounded-xl border border-[#0c133a]/25 bg-white px-3.5 py-3 text-sm font-medium focus:outline-none"
+                    >
+                      {siteConfig.contactSection.experienceOptions.map((opt) => (
+                        <option key={opt} value={opt}>
+                          {opt}
+                        </option>
+                      ))}
+                    </select>
                   </div>
 
                   <div>
