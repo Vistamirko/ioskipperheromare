@@ -4,16 +4,12 @@ import React, { useState, useEffect } from 'react'
 import { siteConfig } from '@/config/siteConfig'
 import { CssPulseDot } from './CssIcons'
 
-interface ContactSectionProps {
-  selectedExperience: string
-}
-
-export function ContactSection({ selectedExperience }: ContactSectionProps) {
+export function ContactSection() {
   const [name, setName] = useState('')
   const [contactInfo, setContactInfo] = useState('')
   const [period, setPeriod] = useState(siteConfig.contactSection.periods[1])
   const [experience, setExperience] = useState(
-    selectedExperience || siteConfig.contactSection.experienceOptions[1]
+    siteConfig.contactSection.experienceOptions[1]
   )
   const [message, setMessage] = useState('')
   const [highlightPulse, setHighlightPulse] = useState(false)
@@ -21,13 +17,17 @@ export function ContactSection({ selectedExperience }: ContactSectionProps) {
   const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
-    if (selectedExperience) {
-      setExperience(selectedExperience)
-      setHighlightPulse(true)
-      const timer = setTimeout(() => setHighlightPulse(false), 2000)
-      return () => clearTimeout(timer)
+    const onSelect = (e: Event) => {
+      const slug = (e as CustomEvent<string>).detail
+      if (slug) {
+        setExperience(slug)
+        setHighlightPulse(true)
+        setTimeout(() => setHighlightPulse(false), 2000)
+      }
     }
-  }, [selectedExperience])
+    window.addEventListener('select-format', onSelect)
+    return () => window.removeEventListener('select-format', onSelect)
+  }, [])
 
   const buildWhatsappUrl = () => {
     const text = name

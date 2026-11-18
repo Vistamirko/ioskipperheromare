@@ -5,11 +5,14 @@ import Image from 'next/image'
 import { siteConfig, VoyageFormat } from '@/config/siteConfig'
 import { CssCheckPoint, CssPulseDot } from './CssIcons'
 
-interface ItinerariesSectionProps {
-  onSelectFormat: (formatSlug: string) => void
-}
-
-export function ItinerariesSection({ onSelectFormat }: ItinerariesSectionProps) {
+export function ItinerariesSection() {
+  const handleSelectFormat = (formatSlug: string) => {
+    window.dispatchEvent(new CustomEvent('select-format', { detail: formatSlug }))
+    const contactEl = document.getElementById('contatti')
+    if (contactEl) {
+      contactEl.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
   return (
     <section
       id="itinerari"
@@ -95,7 +98,7 @@ export function ItinerariesSection({ onSelectFormat }: ItinerariesSectionProps) 
                 <div className="px-6 pb-6 pt-2">
                   <button
                     type="button"
-                    onClick={() => onSelectFormat(format.slug)}
+                    onClick={() => handleSelectFormat(format.slug)}
                     className={`w-full inline-flex items-center justify-center gap-2.5 rounded-full py-3.5 px-5 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.16em] transition-all cursor-pointer ${
                       isFeatured
                         ? 'bg-[#62b4e4] hover:bg-white text-[#0c133a] shadow-lg'
