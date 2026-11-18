@@ -21,7 +21,8 @@ export function SkipperBookSection() {
                 src={skipperAndBook.portraitPrimary}
                 alt="Mirko Generoso Vista al timone"
                 fill
-                unoptimized
+                quality={65}
+                sizes="(max-width: 768px) 350px, 420px"
                 className="object-cover"
               />
             </div>

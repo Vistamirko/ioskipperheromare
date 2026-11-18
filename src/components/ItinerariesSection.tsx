@@ -52,7 +52,8 @@ export function ItinerariesSection() {
                       src={format.image}
                       alt={format.title}
                       fill
-                      unoptimized
+                      quality={65}
+                      sizes="(max-width: 768px) 350px, 360px"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0c133a]/85 via-transparent to-transparent" />
