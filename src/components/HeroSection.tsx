@@ -9,7 +9,7 @@ export function HeroSection() {
       className="relative min-h-[92svh] sm:min-h-screen w-full overflow-hidden bg-[#0c133a] flex flex-col justify-center pt-28 pb-24 sm:pt-36 sm:pb-32"
       aria-label="Introduzione IoSkippheroMare"
     >
-      {/* Immagine LCP prioritaria senza ritardo JS */}
+      {/* Immagine LCP prioritaria */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/archivio/barca-drone-fondale.webp"
@@ -17,18 +17,18 @@ export function HeroSection() {
           fill
           priority
           fetchPriority="high"
-          quality={75}
-          sizes="100vw"
+          quality={68}
+          sizes="(max-width: 640px) 100vw, (max-width: 1200px) 100vw, 1600px"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[#0c133a]/35 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0c133a] via-[#0c133a]/45 to-[#0c133a]/55" />
+        <div className="absolute inset-0 bg-[#0c133a]/40 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0c133a] via-[#0c133a]/50 to-[#0c133a]/60" />
       </div>
 
-      {/* Contenuto Hero renderizzato immediatamente nel primo frame SSR per LCP < 1.2s */}
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 sm:px-8 my-auto">
         <div className="max-w-3xl space-y-5 sm:space-y-7 text-left">
-          <div className="inline-flex items-center gap-2.5 rounded-full bg-white/10 ring-1 ring-white/20 px-4 py-1.5 backdrop-blur-xl">
+          {/* Pillola Occhiello con sfondo #0c133a/85 per contrasto WCAG > 7:1 */}
+          <div className="inline-flex items-center gap-2.5 rounded-full bg-[#0c133a]/85 ring-1 ring-[#62b4e4]/35 px-4 py-1.5 backdrop-blur-xl">
             <CssPulseDot color="blue" />
             <span className="font-cordial text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#62b4e4] uppercase">
               Vela · Snorkeling · Ascolto Cetacei
@@ -42,7 +42,7 @@ export function HeroSection() {
             </span>
           </h1>
 
-          <p className="text-base sm:text-xl text-blue-50/90 font-light leading-relaxed max-w-2xl drop-shadow">
+          <p className="text-base sm:text-xl text-white/95 font-normal leading-relaxed max-w-2xl drop-shadow">
             Calette turchesi, relax a prua e l’emozione unica di ascoltare i cetacei con l’idrofono
             in navigazione e spiare i fondali fino a 100 metri.
           </p>
@@ -61,23 +61,23 @@ export function HeroSection() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-white/10 hover:bg-white/20 ring-1 ring-white/25 backdrop-blur-md px-7 py-4 font-cordial text-sm sm:text-base font-bold uppercase tracking-[0.16em] text-white transition-all"
+              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#0c133a]/80 hover:bg-[#0c133a] ring-1 ring-white/30 backdrop-blur-md px-7 py-4 font-cordial text-sm sm:text-base font-bold uppercase tracking-[0.16em] text-white transition-all"
             >
               <CssPulseDot color="teal" />
               <span>Scrivimi su WhatsApp</span>
             </a>
           </div>
 
-          <div className="pt-2 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-blue-100/90 font-medium">
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#0c133a]/60 border border-[#62b4e4]/30 px-3.5 py-1.5 backdrop-blur-md">
+          <div className="pt-2 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-white font-medium">
+            <span className="inline-flex items-center gap-2 rounded-full bg-[#0c133a]/80 border border-[#62b4e4]/35 px-3.5 py-1.5 backdrop-blur-md">
               <span className="h-1.5 w-1.5 rounded-full bg-[#62b4e4]" />
               Sole &amp; Calette
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#0c133a]/60 border border-[#62b4e4]/30 px-3.5 py-1.5 backdrop-blur-md">
+            <span className="inline-flex items-center gap-2 rounded-full bg-[#0c133a]/80 border border-[#62b4e4]/35 px-3.5 py-1.5 backdrop-blur-md">
               <span className="h-1.5 w-1.5 rounded-full bg-[#2DD4BF]" />
               Idrofono Cetacei
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#0c133a]/60 border border-[#62b4e4]/30 px-3.5 py-1.5 backdrop-blur-md">
+            <span className="inline-flex items-center gap-2 rounded-full bg-[#0c133a]/80 border border-[#62b4e4]/35 px-3.5 py-1.5 backdrop-blur-md">
               <span className="h-1.5 w-1.5 rounded-full bg-[#62b4e4]" />
               Snorkeling &amp; Drone -100m
             </span>

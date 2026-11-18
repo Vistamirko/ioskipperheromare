@@ -23,20 +23,21 @@ export function SkipperBookSection() {
                 src={skipperAndBook.portraitPrimary}
                 alt="Mirko Generoso Vista al timone"
                 fill
-                sizes="(min-width: 1024px) 460px, 92vw"
+                quality={68}
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 440px"
                 className="object-cover"
               />
             </div>
 
-            {/* Card Libro con sizes="180px" per evitare warning Retina su Lighthouse */}
             <div className="mt-3 sm:mt-0 sm:absolute sm:-bottom-5 sm:-right-5 flex items-center gap-3.5 rounded-2xl bg-[#1a265d] p-3.5 border border-[#62b4e4]/45 shadow-2xl w-full sm:max-w-xs">
               <div className="relative h-16 w-12 overflow-hidden rounded-lg shrink-0 border border-white/20">
                 <Image
                   src={skipperAndBook.book.coverImage}
                   alt="Libro Io Respiro Mare"
-                  fill
-                  sizes="180px"
-                  className="object-cover"
+                  width={96}
+                  height={144}
+                  quality={72}
+                  className="h-full w-full object-cover"
                 />
               </div>
               <div className="min-w-0">

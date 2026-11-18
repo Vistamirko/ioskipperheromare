@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { siteConfig } from '@/config/siteConfig'
 import { CssPulseDot } from './CssIcons'
 
@@ -65,7 +64,6 @@ export function ContactSection({ selectedExperience }: ContactSectionProps) {
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Colonna Sinistra (5 col) */}
           <div className="lg:col-span-5 space-y-6">
             <div>
               <span className="font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#62b4e4]">
@@ -76,11 +74,9 @@ export function ContactSection({ selectedExperience }: ContactSectionProps) {
                 className="mt-2 font-cordial text-3xl sm:text-5xl font-bold uppercase tracking-[0.03em] text-white leading-tight"
               >
                 Prenota o chiedi{' '}
-                <span className="font-cordial-inline font-normal text-[#62b4e4]">
-                  informazioni
-                </span>
+                <span className="text-[#62b4e4]">informazioni</span>
               </h2>
-              <p className="mt-3 text-sm sm:text-base text-blue-100/80">
+              <p className="mt-3 text-sm sm:text-base text-blue-100/85">
                 Scrivimi direttamente su WhatsApp per una risposta immediata oppure compila il
                 modulo.
               </p>
@@ -97,7 +93,7 @@ export function ContactSection({ selectedExperience }: ContactSectionProps) {
                   <CssPulseDot color="teal" />
                   <div>
                     <div className="text-sm sm:text-base leading-none">Scrivimi su WhatsApp</div>
-                    <div className="font-body text-xs font-medium opacity-80 mt-1">
+                    <div className="font-body text-xs font-semibold text-[#0c133a] mt-1">
                       {siteConfig.contact.phoneDisplay}
                     </div>
                   </div>
@@ -109,7 +105,7 @@ export function ContactSection({ selectedExperience }: ContactSectionProps) {
                 href={siteConfig.contact.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between rounded-2xl bg-[#1a265d]/70 hover:bg-[#1a265d] border border-[#62b4e4]/30 p-4 text-white transition-all"
+                className="flex items-center justify-between rounded-2xl bg-[#1a265d] hover:bg-[#233275] border border-[#62b4e4]/35 p-4 text-white transition-all"
               >
                 <div className="text-sm font-medium">
                   Instagram <strong className="text-[#62b4e4]">{siteConfig.contact.instagramHandle}</strong>
@@ -119,155 +115,147 @@ export function ContactSection({ selectedExperience }: ContactSectionProps) {
             </div>
           </div>
 
-          {/* Colonna Destra: Form Veloce (7 col) */}
           <div className="lg:col-span-7">
             <div
               className={`rounded-3xl bg-white text-[#0c133a] p-6 sm:p-8 shadow-2xl border-2 transition-all ${
                 highlightPulse ? 'border-[#62b4e4] ring-4 ring-[#62b4e4]/30' : 'border-white'
               }`}
             >
-              <AnimatePresence mode="wait">
-                {submitted ? (
-                  <motion.div
-                    key="success"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="py-6 text-center space-y-4"
+              {submitted ? (
+                <div className="py-6 text-center space-y-4">
+                  <h3 className="font-cordial text-2xl sm:text-3xl font-bold uppercase">
+                    Richiesta inviata!
+                  </h3>
+                  <p className="text-sm text-[#0c133a]/80">
+                    Ti rispondo prestissimo. Vuoi anticiparmi il messaggio su WhatsApp?
+                  </p>
+                  <a
+                    href={buildWhatsappUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#62b4e4] px-6 py-3 font-cordial text-xs font-bold uppercase tracking-[0.16em] text-[#0c133a]"
                   >
-                    <h3 className="font-cordial text-2xl sm:text-3xl font-bold uppercase">
-                      Richiesta inviata!
-                    </h3>
-                    <p className="text-sm text-[#0c133a]/75">
-                      Ti rispondo prestissimo. Vuoi anticiparmi il messaggio su WhatsApp?
-                    </p>
-                    <a
-                      href={buildWhatsappUrl()}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full bg-[#62b4e4] px-6 py-3 font-cordial text-xs font-bold uppercase tracking-[0.16em] text-[#0c133a]"
-                    >
-                      <span>Apri WhatsApp</span>
-                    </a>
-                  </motion.div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    {highlightPulse && (
-                      <div className="inline-flex items-center gap-2 rounded-full bg-[#F4F9FD] border border-[#62b4e4]/40 px-3.5 py-1 text-xs font-bold text-[#0c133a]">
-                        <CssPulseDot color="blue" />
-                        <span>Formula selezionata!</span>
-                      </div>
-                    )}
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label
-                          htmlFor="name"
-                          className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
-                        >
-                          Nome *
-                        </label>
-                        <input
-                          id="name"
-                          type="text"
-                          required
-                          value={name}
-                          onChange={(e) => setName(e.target.value)}
-                          placeholder="Il tuo nome"
-                          className="w-full rounded-xl border border-[#0c133a]/20 px-3.5 py-3 text-sm focus:border-[#62b4e4] focus:outline-none"
-                        />
-                      </div>
-
-                      <div>
-                        <label
-                          htmlFor="contactInfo"
-                          className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
-                        >
-                          WhatsApp o Email *
-                        </label>
-                        <input
-                          id="contactInfo"
-                          type="text"
-                          required
-                          value={contactInfo}
-                          onChange={(e) => setContactInfo(e.target.value)}
-                          placeholder="+39 333... o email"
-                          className="w-full rounded-xl border border-[#0c133a]/20 px-3.5 py-3 text-sm focus:border-[#62b4e4] focus:outline-none"
-                        />
-                      </div>
+                    <span>Apri WhatsApp</span>
+                  </a>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {highlightPulse && (
+                    <div className="inline-flex items-center gap-2 rounded-full bg-[#F4F9FD] border border-[#075985]/40 px-3.5 py-1 text-xs font-bold text-[#0c133a]">
+                      <CssPulseDot color="blue" />
+                      <span>Formula selezionata!</span>
                     </div>
+                  )}
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label
-                          htmlFor="experience"
-                          className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
-                        >
-                          Esperienza
-                        </label>
-                        <select
-                          id="experience"
-                          value={experience}
-                          onChange={(e) => setExperience(e.target.value)}
-                          className="w-full rounded-xl border border-[#0c133a]/20 bg-white px-3.5 py-3 text-sm font-medium focus:outline-none"
-                        >
-                          {siteConfig.contactSection.experienceOptions.map((opt) => (
-                            <option key={opt} value={opt}>
-                              {opt}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-
-                      <div>
-                        <label
-                          htmlFor="period"
-                          className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
-                        >
-                          Periodo
-                        </label>
-                        <select
-                          id="period"
-                          value={period}
-                          onChange={(e) => setPeriod(e.target.value)}
-                          className="w-full rounded-xl border border-[#0c133a]/20 bg-white px-3.5 py-3 text-sm font-medium focus:outline-none"
-                        >
-                          {siteConfig.contactSection.periods.map((p) => (
-                            <option key={p} value={p}>
-                              {p}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
+                      >
+                        Nome *
+                      </label>
+                      <input
+                        id="name"
+                        type="text"
+                        required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Il tuo nome"
+                        className="w-full rounded-xl border border-[#0c133a]/25 px-3.5 py-3 text-sm focus:border-[#075985] focus:outline-none"
+                      />
                     </div>
 
                     <div>
                       <label
-                        htmlFor="message"
+                        htmlFor="contactInfo"
                         className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
                       >
-                        Quanti siete o cosa vi piacerebbe fare? (opzionale)
+                        WhatsApp o Email *
                       </label>
-                      <textarea
-                        id="message"
-                        rows={2}
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        placeholder="Es. Siamo in 2 / una famiglia con 2 ragazzi..."
-                        className="w-full rounded-xl border border-[#0c133a]/20 px-3.5 py-2.5 text-sm focus:border-[#62b4e4] focus:outline-none"
+                      <input
+                        id="contactInfo"
+                        type="text"
+                        required
+                        value={contactInfo}
+                        onChange={(e) => setContactInfo(e.target.value)}
+                        placeholder="+39 333... o email"
+                        className="w-full rounded-xl border border-[#0c133a]/25 px-3.5 py-3 text-sm focus:border-[#075985] focus:outline-none"
                       />
                     </div>
+                  </div>
 
-                    <button
-                      type="submit"
-                      disabled={submitting}
-                      className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#0c133a] hover:bg-[#1a265d] py-4 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-white shadow-lg transition-all cursor-pointer"
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label
+                        htmlFor="experience"
+                        className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
+                      >
+                        Esperienza
+                      </label>
+                      <select
+                        id="experience"
+                        value={experience}
+                        onChange={(e) => setExperience(e.target.value)}
+                        className="w-full rounded-xl border border-[#0c133a]/25 bg-white px-3.5 py-3 text-sm font-medium focus:outline-none"
+                      >
+                        {siteConfig.contactSection.experienceOptions.map((opt) => (
+                          <option key={opt} value={opt}>
+                            {opt}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="period"
+                        className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
+                      >
+                        Periodo
+                      </label>
+                      <select
+                        id="period"
+                        value={period}
+                        onChange={(e) => setPeriod(e.target.value)}
+                        className="w-full rounded-xl border border-[#0c133a]/25 bg-white px-3.5 py-3 text-sm font-medium focus:outline-none"
+                      >
+                        {siteConfig.contactSection.periods.map((p) => (
+                          <option key={p} value={p}>
+                            {p}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="block font-cordial text-xs font-bold uppercase tracking-wider text-[#0c133a] mb-1"
                     >
-                      <span>{submitting ? 'Invio...' : 'Invia richiesta'}</span>
-                      <span aria-hidden="true">→</span>
-                    </button>
-                  </form>
-                )}
-              </AnimatePresence>
+                      Quanti siete o cosa vi piacerebbe fare? (opzionale)
+                    </label>
+                    <textarea
+                      id="message"
+                      rows={2}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder="Es. Siamo in 2 / una famiglia con 2 ragazzi..."
+                      className="w-full rounded-xl border border-[#0c133a]/25 px-3.5 py-2.5 text-sm focus:border-[#075985] focus:outline-none"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#0c133a] hover:bg-[#1a265d] py-4 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-white shadow-lg transition-all cursor-pointer"
+                  >
+                    <span>{submitting ? 'Invio...' : 'Invia richiesta'}</span>
+                    <span aria-hidden="true">→</span>
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>

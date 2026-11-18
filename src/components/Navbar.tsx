@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { siteConfig } from '@/config/siteConfig'
 import { BrandLogo } from './BrandLogo'
 
@@ -30,33 +29,30 @@ export function Navbar() {
           <div
             className={`flex items-center justify-between rounded-full transition-all duration-300 ${
               scrolled
-                ? 'bg-[#0c133a]/92 text-white backdrop-blur-xl border border-[#62b4e4]/25 px-4 py-2.5 sm:px-6 sm:py-3 shadow-[0_16px_40px_rgba(12,19,58,0.45)]'
+                ? 'bg-[#0c133a]/95 text-white backdrop-blur-xl border border-[#62b4e4]/25 px-4 py-2.5 sm:px-6 sm:py-3 shadow-[0_16px_40px_rgba(12,19,58,0.45)]'
                 : 'bg-transparent text-white px-1 py-1 sm:px-2'
             }`}
           >
-            {/* Logo Ufficiale perfettamente integrato senza scatola bianca */}
+            {/* Link senza aria-label discordante dal testo visibile (risolve label-content-name-mismatch) */}
             <a
               href="#"
               className="group flex items-center text-left focus:outline-none min-w-0"
-              aria-label="IoSkippheroMare — Home"
             >
               <BrandLogo variant="light" />
             </a>
 
-            {/* 4 Link di Ancoraggio Desktop nello stile Io Respiro Mare */}
             <nav className="hidden lg:flex items-center gap-2" aria-label="Navigazione principale">
               {siteConfig.navigation.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="rounded-full px-4 py-2 font-cordial text-sm font-bold uppercase tracking-[0.14em] text-white/85 hover:text-[#62b4e4] hover:bg-white/5 transition-all duration-300"
+                  className="rounded-full px-4 py-2 font-cordial text-sm font-bold uppercase tracking-[0.14em] text-white/90 hover:text-[#62b4e4] hover:bg-white/5 transition-all duration-300"
                 >
                   {item.label}
                 </a>
               ))}
             </nav>
 
-            {/* CTA Desktop + Hamburger Mobile */}
             <div className="flex items-center gap-2.5 shrink-0">
               <a
                 href="#contatti"
@@ -70,7 +66,7 @@ export function Navbar() {
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label={mobileMenuOpen ? 'Chiudi menu' : 'Apri menu'}
                 aria-expanded={mobileMenuOpen}
-                className="lg:hidden relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-[#0c133a]/60 backdrop-blur-md text-white transition-colors"
+                className="lg:hidden relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/25 bg-[#0c133a]/80 backdrop-blur-md text-white transition-colors"
               >
                 <div className="flex flex-col items-center justify-center gap-1.5 w-4">
                   <span
@@ -90,42 +86,34 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Drawer Menu in stile Io Respiro Mare (#0c133a) */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.22 }}
-            className="fixed inset-x-4 top-20 z-40 rounded-3xl bg-[#0c133a]/96 p-6 text-white border border-[#62b4e4]/30 backdrop-blur-2xl shadow-2xl lg:hidden"
-          >
-            <nav className="flex flex-col space-y-2">
-              {siteConfig.navigation.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between rounded-2xl px-4 py-3 font-cordial text-xl font-bold uppercase tracking-[0.1em] text-white hover:bg-white/5 hover:text-[#62b4e4] transition-colors"
-                >
-                  <span>{item.label}</span>
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#62b4e4]" />
-                </a>
-              ))}
-            </nav>
-
-            <div className="mt-5 pt-4 border-t border-white/10">
+      {/* Mobile Drawer in puro CSS (zero JS Framer Motion) */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-x-4 top-20 z-40 rounded-3xl bg-[#0c133a]/98 p-6 text-white border border-[#62b4e4]/30 backdrop-blur-2xl shadow-2xl lg:hidden">
+          <nav className="flex flex-col space-y-2" aria-label="Menu mobile">
+            {siteConfig.navigation.map((item) => (
               <a
-                href="#contatti"
+                key={item.href}
+                href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex w-full items-center justify-center rounded-full bg-[#62b4e4] py-3.5 font-cordial text-sm font-bold uppercase tracking-[0.18em] text-[#0c133a] shadow-lg"
+                className="flex items-center justify-between rounded-2xl px-4 py-3 font-cordial text-xl font-bold uppercase tracking-[0.1em] text-white hover:bg-white/5 hover:text-[#62b4e4] transition-colors"
               >
-                Sali a bordo
+                <span>{item.label}</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-[#62b4e4]" />
               </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+          </nav>
+
+          <div className="mt-5 pt-4 border-t border-white/10">
+            <a
+              href="#contatti"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex w-full items-center justify-center rounded-full bg-[#62b4e4] py-3.5 font-cordial text-sm font-bold uppercase tracking-[0.18em] text-[#0c133a] shadow-lg"
+            >
+              Sali a bordo
+            </a>
+          </div>
+        </div>
+      )}
     </>
   )
 }

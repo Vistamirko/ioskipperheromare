@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Minus } from 'lucide-react'
 import { siteConfig, FaqItem } from '@/config/siteConfig'
 
@@ -16,7 +15,7 @@ export function FaqSection() {
     >
       <div className="mx-auto max-w-3xl px-4 sm:px-8">
         <div className="text-center">
-          <span className="font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#0369A1]">
+          <span className="font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#075985]">
             Domande Frequenti
           </span>
           <h2
@@ -24,7 +23,7 @@ export function FaqSection() {
             className="mt-1.5 font-cordial text-2xl sm:text-4xl font-bold uppercase tracking-[0.03em] text-[#0c133a]"
           >
             Tutto chiaro prima di{' '}
-            <span className="text-[#0369A1]">salpare</span>
+            <span className="text-[#075985]">salpare</span>
           </h2>
         </div>
 
@@ -45,25 +44,16 @@ export function FaqSection() {
                   <span className="font-cordial text-base sm:text-lg font-bold uppercase tracking-[0.02em] text-[#0c133a]">
                     {item.question}
                   </span>
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-[#0c133a] border border-[#0369A1]/40">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-[#0c133a] border border-[#075985]/40">
                     {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                   </span>
                 </button>
 
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <p className="px-4 pb-4 sm:px-5 sm:pb-5 text-sm sm:text-base text-[#0c133a]/85 leading-relaxed">
-                        {item.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {isOpen && (
+                  <p className="px-4 pb-4 sm:px-5 sm:pb-5 text-sm sm:text-base text-[#0c133a]/90 leading-relaxed">
+                    {item.answer}
+                  </p>
+                )}
               </div>
             )
           })}

@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
 import { CssSailSunIcon, CssDiveWaveIcon, CssCheckPoint } from './CssIcons'
 
 const tabsData = {
@@ -40,7 +39,7 @@ export function TwoWorldsSection() {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <div className="text-center max-w-2xl mx-auto">
-          <span className="font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#0369A1]">
+          <span className="font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#075985]">
             La Vita a Bordo
           </span>
           <h2
@@ -48,11 +47,10 @@ export function TwoWorldsSection() {
             className="mt-2 font-cordial text-3xl sm:text-5xl font-bold uppercase tracking-[0.03em] text-[#0c133a] leading-[1.08]"
           >
             Due modi di vivere{' '}
-            <span className="text-[#0369A1]">la stessa baia</span>
+            <span className="text-[#075985]">la stessa baia</span>
           </h2>
         </div>
 
-        {/* Switcher con contrasto WCAG AAA */}
         <div className="mt-7 flex justify-center">
           <div className="grid grid-cols-2 gap-1.5 rounded-full bg-white p-1.5 border border-[#0c133a]/10 shadow-md w-full max-w-sm sm:max-w-md">
             <button
@@ -61,7 +59,7 @@ export function TwoWorldsSection() {
               className={`flex items-center justify-center gap-2 rounded-full py-3 px-4 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.12em] whitespace-nowrap transition-all cursor-pointer ${
                 activeTab === 'sopra'
                   ? 'bg-[#0c133a] text-white shadow-sm'
-                  : 'text-[#0c133a]/75 hover:text-[#0c133a]'
+                  : 'text-[#0c133a] hover:bg-[#F4F9FD]'
               }`}
             >
               <CssSailSunIcon active={activeTab === 'sopra'} />
@@ -74,7 +72,7 @@ export function TwoWorldsSection() {
               className={`flex items-center justify-center gap-2 rounded-full py-3 px-4 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.12em] whitespace-nowrap transition-all cursor-pointer ${
                 activeTab === 'sotto'
                   ? 'bg-[#0c133a] text-white shadow-sm'
-                  : 'text-[#0c133a]/75 hover:text-[#0c133a]'
+                  : 'text-[#0c133a] hover:bg-[#F4F9FD]'
               }`}
             >
               <CssDiveWaveIcon active={activeTab === 'sotto'} />
@@ -84,56 +82,48 @@ export function TwoWorldsSection() {
         </div>
 
         <div className="mt-7 sm:mt-9">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.25 }}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center rounded-3xl bg-white p-4 sm:p-8 border border-[#62b4e4]/25 shadow-[0_20px_50px_rgba(12,19,58,0.06)]"
-            >
-              <div className="lg:col-span-6 relative aspect-[16/11] sm:aspect-[4/3] w-full overflow-hidden rounded-2xl">
-                <Image
-                  src={current.image}
-                  alt={current.title}
-                  fill
-                  sizes="(min-width: 1024px) 540px, 92vw"
-                  className="object-cover"
-                />
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center rounded-3xl bg-white p-4 sm:p-8 border border-[#62b4e4]/25 shadow-[0_20px_50px_rgba(12,19,58,0.06)] transition-opacity duration-200">
+            <div className="lg:col-span-6 relative aspect-[16/11] sm:aspect-[4/3] w-full overflow-hidden rounded-2xl">
+              <Image
+                src={current.image}
+                alt={current.title}
+                fill
+                quality={70}
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 85vw, 520px"
+                className="object-cover"
+              />
+            </div>
 
-              <div className="lg:col-span-6 space-y-4 px-1 sm:px-0 pb-1 sm:pb-0">
-                <h3 className="font-cordial text-2xl sm:text-3xl font-bold uppercase tracking-[0.02em] text-[#0c133a] leading-snug">
-                  {current.title}
-                </h3>
+            <div className="lg:col-span-6 space-y-4 px-1 sm:px-0 pb-1 sm:pb-0">
+              <h3 className="font-cordial text-2xl sm:text-3xl font-bold uppercase tracking-[0.02em] text-[#0c133a] leading-snug">
+                {current.title}
+              </h3>
 
-                <p className="text-xs sm:text-base text-[#0c133a]/75">{current.subtitle}</p>
+              <p className="text-xs sm:text-base text-[#0c133a]/80">{current.subtitle}</p>
 
-                <ul className="space-y-2.5 pt-1">
-                  {current.points.map((pt, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2.5 text-xs sm:text-base font-medium leading-snug text-[#0c133a]"
-                    >
-                      <CssCheckPoint variant="blue" />
-                      <span>{pt}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="pt-2">
-                  <a
-                    href="#itinerari"
-                    className="group inline-flex items-center gap-2 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[#0369A1] hover:text-[#0c133a] transition-colors"
+              <ul className="space-y-2.5 pt-1">
+                {current.points.map((pt, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-2.5 text-xs sm:text-base font-medium leading-snug text-[#0c133a]"
                   >
-                    <span>Scegli la tua formula</span>
-                    <span className="inline-block h-[1.5px] w-4 bg-current transition-all group-hover:w-7" />
-                  </a>
-                </div>
+                    <CssCheckPoint variant="blue" />
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="pt-2">
+                <a
+                  href="#itinerari"
+                  className="group inline-flex items-center gap-2 font-cordial text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[#075985] hover:text-[#0c133a] transition-colors"
+                >
+                  <span>Scegli la tua formula</span>
+                  <span className="inline-block h-[1.5px] w-4 bg-current transition-all group-hover:w-7" />
+                </a>
               </div>
-            </motion.div>
-          </AnimatePresence>
+            </div>
+          </div>
         </div>
       </div>
     </section>

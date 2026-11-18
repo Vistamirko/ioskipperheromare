@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 
 interface BrandLogoProps {
@@ -19,7 +17,8 @@ export function BrandLogo({
     <div className={`inline-flex items-center gap-3 select-none ${className}`}>
       <img
         src="/images/logo-io-skipphero-mare.svg"
-        alt="IoSkippheroMare"
+        alt=""
+        aria-hidden="true"
         width={44}
         height={42}
         className="h-9 sm:h-11 w-auto shrink-0 block transition-transform duration-300 group-hover:scale-105"

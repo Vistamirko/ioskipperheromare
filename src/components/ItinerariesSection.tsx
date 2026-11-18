@@ -18,7 +18,7 @@ export function ItinerariesSection({ onSelectFormat }: ItinerariesSectionProps) 
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <div className="text-center max-w-xl mx-auto">
-          <span className="font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#0369A1]">
+          <span className="font-cordial text-xs font-bold uppercase tracking-[0.22em] text-[#075985]">
             Saliamo a Bordo
           </span>
           <h2
@@ -26,7 +26,7 @@ export function ItinerariesSection({ onSelectFormat }: ItinerariesSectionProps) 
             className="mt-2 font-cordial text-3xl sm:text-5xl font-bold uppercase tracking-[0.03em] text-[#0c133a]"
           >
             Scegli la tua{' '}
-            <span className="text-[#0369A1]">formula</span>
+            <span className="text-[#075985]">formula</span>
           </h2>
         </div>
 
@@ -49,7 +49,8 @@ export function ItinerariesSection({ onSelectFormat }: ItinerariesSectionProps) 
                       src={format.image}
                       alt={format.title}
                       fill
-                      sizes="(min-width: 1024px) 380px, 92vw"
+                      quality={68}
+                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 85vw, 360px"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0c133a]/85 via-transparent to-transparent" />
