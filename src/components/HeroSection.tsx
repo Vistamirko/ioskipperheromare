@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import { siteConfig } from '@/config/siteConfig'
 import { CssPulseDot } from './CssIcons'
 
@@ -9,25 +8,35 @@ export function HeroSection() {
       className="relative min-h-[92svh] sm:min-h-screen w-full overflow-hidden bg-[#0c133a] flex flex-col justify-center pt-28 pb-24 sm:pt-36 sm:pb-32"
       aria-label="Introduzione IoSkippheroMare"
     >
-      {/* Immagine LCP prioritaria */}
+      {/* Immagine LCP nativa con art-direction Mobile (17KB) / Desktop (38KB) precaricata in <head> */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/archivio/barca-drone-fondale.webp"
-          alt="Barca a vela nel mare cristallino"
-          fill
-          priority
-          fetchPriority="high"
-          quality={68}
-          sizes="(max-width: 640px) 100vw, (max-width: 1200px) 100vw, 1600px"
-          className="object-cover object-center"
-        />
+        <picture>
+          <source
+            media="(max-width: 767px)"
+            srcSet="/images/archivio/barca-drone-mobile.webp"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcSet="/images/archivio/barca-drone-fondale.webp"
+            type="image/webp"
+          />
+          <img
+            src="/images/archivio/barca-drone-fondale.webp"
+            alt="Barca a vela nel mare cristallino"
+            width={1440}
+            height={900}
+            fetchPriority="high"
+            decoding="sync"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+        </picture>
         <div className="absolute inset-0 bg-[#0c133a]/40 mix-blend-multiply" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0c133a] via-[#0c133a]/50 to-[#0c133a]/60" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 sm:px-8 my-auto">
         <div className="max-w-3xl space-y-5 sm:space-y-7 text-left">
-          {/* Pillola Occhiello con sfondo #0c133a/85 per contrasto WCAG > 7:1 */}
           <div className="inline-flex items-center gap-2.5 rounded-full bg-[#0c133a]/85 ring-1 ring-[#62b4e4]/35 px-4 py-1.5 backdrop-blur-xl">
             <CssPulseDot color="blue" />
             <span className="font-cordial text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#62b4e4] uppercase">

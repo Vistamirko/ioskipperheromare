@@ -49,8 +49,7 @@ export function ItinerariesSection({ onSelectFormat }: ItinerariesSectionProps) 
                       src={format.image}
                       alt={format.title}
                       fill
-                      quality={68}
-                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 85vw, 360px"
+                      unoptimized
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0c133a]/85 via-transparent to-transparent" />

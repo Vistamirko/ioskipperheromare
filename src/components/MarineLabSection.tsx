@@ -118,8 +118,7 @@ export function MarineLabSection() {
                       src={item.image}
                       alt={item.title}
                       fill
-                      quality={68}
-                      sizes="(max-width: 640px) 44vw, (max-width: 1024px) 45vw, 260px"
+                      unoptimized
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   )}

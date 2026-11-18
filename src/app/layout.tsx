@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next'
-import { Plus_Jakarta_Sans } from 'next/font/google'
 import localFont from 'next/font/local'
 import './globals.css'
 import { siteConfig } from '@/config/siteConfig'
@@ -9,14 +8,6 @@ const newCordial = localFont({
   weight: '700',
   style: 'normal',
   variable: '--font-cordial',
-  display: 'swap',
-  preload: true,
-})
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  variable: '--font-sans',
   display: 'swap',
   preload: true,
 })
@@ -72,8 +63,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/images/archivio/barca-drone-fondale.webp',
-        width: 1600,
-        height: 1066,
+        width: 1440,
+        height: 900,
         alt: 'IoSkippheroMare — Vacanze a vela, snorkeling e ascolto cetacei',
       },
     ],
@@ -144,11 +135,22 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="it"
-      className={`${newCordial.variable} ${jakarta.variable} antialiased`}
-    >
+    <html lang="it" className={`${newCordial.variable} antialiased`}>
       <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/archivio/barca-drone-mobile.webp"
+          media="(max-width: 767px)"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/archivio/barca-drone-fondale.webp"
+          media="(min-width: 768px)"
+          fetchPriority="high"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

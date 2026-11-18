@@ -88,8 +88,7 @@ export function TwoWorldsSection() {
                 src={current.image}
                 alt={current.title}
                 fill
-                quality={70}
-                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 85vw, 520px"
+                unoptimized
                 className="object-cover"
               />
             </div>
